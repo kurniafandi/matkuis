@@ -33,7 +33,13 @@ if (!isset($_SESSION["login"])) {
                     <div class="form-group mt-3">
                         <div>
                         <input type="text" name="jawab" required>
-                        <?php echo $_SESSION["ucapan"]; ?>
+                        <?php
+                        if (!isset($_SESSION["ucapan"])) {
+                        echo "";
+                        } else {
+                            echo $_SESSION["ucapan"];
+                        }
+                        ?>
                         <a href="peringkat.php"><strong>Berhenti ?</strong></a>
                         </div>                        
                     </div>
